@@ -1,0 +1,227 @@
+/* ═══════════════════════════════════════════════════════
+   PRISM THEME ENGINE
+   Canonical --prism-* variable definitions with 3 vibes.
+   Import this file to get the full token system:
+     @import "@prism/ui/styles";
+   ═══════════════════════════════════════════════════════ */
+
+@layer prism {
+  /* ── Modern (default) ─────────────────────────────── */
+  :root {
+    /* Colors — Semantic palette */
+    --prism-color-primary: #6366f1;
+    --prism-color-primary-foreground: #ffffff;
+    --prism-color-secondary: #f1f5f9;
+    --prism-color-secondary-foreground: #0f172a;
+    --prism-color-background: #ffffff;
+    --prism-color-foreground: #0f172a;
+    --prism-color-surface: #f8fafc;
+    --prism-color-surface-foreground: #0f172a;
+    --prism-color-muted: #f1f5f9;
+    --prism-color-muted-foreground: #64748b;
+    --prism-color-border: #e2e8f0;
+    --prism-color-accent: #f1f5f9;
+    --prism-color-accent-foreground: #0f172a;
+    --prism-color-ring: #6366f1;
+    --prism-color-destructive: #ef4444;
+    --prism-color-destructive-foreground: #ffffff;
+    --prism-color-success: #22c55e;
+    --prism-color-success-foreground: #ffffff;
+    --prism-color-error: #ef4444;
+    --prism-color-error-foreground: #ffffff;
+    --prism-color-info: #3b82f6;
+    --prism-color-info-foreground: #ffffff;
+
+    /* Geometry */
+    --prism-radius-xs: 0.125rem;
+    --prism-radius-sm: 0.25rem;
+    --prism-radius-md: 0.5rem;
+    --prism-radius-lg: 0.75rem;
+    --prism-radius-xl: 1rem;
+    --prism-border-thin: 1px;
+    --prism-border-default: 1px;
+    --prism-border-thick: 2px;
+    --prism-ring-width: 2px;
+    --prism-ring-offset: 2px;
+
+    /* Typography */
+    --prism-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --prism-font-mono: ui-monospace, Consolas, "Courier New", monospace;
+    --prism-leading-tight: 1.25;
+    --prism-leading-normal: 1.5;
+    --prism-leading-relaxed: 1.75;
+    --prism-tracking-tight: -0.025em;
+    --prism-tracking-normal: 0em;
+    --prism-tracking-wide: 0.025em;
+
+    /* Effects */
+    --prism-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --prism-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --prism-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --prism-blur-sm: 4px;
+    --prism-blur-md: 8px;
+    --prism-blur-lg: 12px;
+  }
+
+  /* ── Retro ────────────────────────────────────────── */
+  .prism-vibe-retro {
+    --prism-color-primary: #1a1a2e;
+    --prism-color-primary-foreground: #f0e68c;
+    --prism-color-secondary: #f5f0e1;
+    --prism-color-secondary-foreground: #1a1a2e;
+    --prism-color-background: #faf8f0;
+    --prism-color-foreground: #1a1a2e;
+    --prism-color-surface: #f5f0e1;
+    --prism-color-surface-foreground: #1a1a2e;
+    --prism-color-muted: #f5f0e1;
+    --prism-color-muted-foreground: #6b5c4d;
+    --prism-color-border: #1a1a2e;
+    --prism-color-accent: #d4a574;
+    --prism-color-accent-foreground: #1a1a2e;
+    --prism-color-ring: #1a1a2e;
+    --prism-color-destructive: #cc3333;
+    --prism-color-destructive-foreground: #ffffff;
+    --prism-color-success: #2d8a4e;
+    --prism-color-success-foreground: #ffffff;
+    --prism-color-error: #cc3333;
+    --prism-color-error-foreground: #ffffff;
+    --prism-color-info: #2563eb;
+    --prism-color-info-foreground: #ffffff;
+
+    --prism-radius-xs: 0;
+    --prism-radius-sm: 0;
+    --prism-radius-md: 0;
+    --prism-radius-lg: 0;
+    --prism-radius-xl: 0;
+    --prism-border-default: 2px;
+    --prism-border-thick: 3px;
+
+    --prism-font-sans: "Courier New", ui-monospace, Consolas, monospace;
+
+    --prism-shadow-sm: 2px 2px 0 #1a1a2e;
+    --prism-shadow-md: 3px 3px 0 #1a1a2e;
+    --prism-shadow-lg: 5px 5px 0 #1a1a2e;
+    --prism-blur-sm: 0px;
+    --prism-blur-md: 0px;
+    --prism-blur-lg: 0px;
+  }
+
+  /* ── Glassy ───────────────────────────────────────── */
+  .prism-vibe-glassy {
+    --prism-color-primary: #818cf8;
+    --prism-color-primary-foreground: #ffffff;
+    --prism-color-secondary: rgba(255, 255, 255, 0.08);
+    --prism-color-secondary-foreground: #e2e8f0;
+    --prism-color-background: rgba(15, 15, 35, 0.75);
+    --prism-color-foreground: #f1f5f9;
+    --prism-color-surface: rgba(255, 255, 255, 0.06);
+    --prism-color-surface-foreground: #f1f5f9;
+    --prism-color-muted: rgba(255, 255, 255, 0.06);
+    --prism-color-muted-foreground: #94a3b8;
+    --prism-color-border: rgba(255, 255, 255, 0.15);
+    --prism-color-accent: rgba(255, 255, 255, 0.08);
+    --prism-color-accent-foreground: #f1f5f9;
+    --prism-color-ring: #818cf8;
+    --prism-color-destructive: #f87171;
+    --prism-color-destructive-foreground: #ffffff;
+    --prism-color-success: #4ade80;
+    --prism-color-success-foreground: #0f172a;
+    --prism-color-error: #f87171;
+    --prism-color-error-foreground: #ffffff;
+    --prism-color-info: #60a5fa;
+    --prism-color-info-foreground: #0f172a;
+
+    --prism-radius-xs: 0.25rem;
+    --prism-radius-sm: 0.5rem;
+    --prism-radius-md: 0.75rem;
+    --prism-radius-lg: 1rem;
+    --prism-radius-xl: 1.5rem;
+
+    --prism-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --prism-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.25);
+    --prism-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.35);
+    --prism-blur-sm: 8px;
+    --prism-blur-md: 12px;
+    --prism-blur-lg: 20px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   TAILWIND 4 THEME ALIASES
+   Maps --prism-* → TW utility tokens so components using
+   bg-primary, text-foreground, etc. resolve correctly.
+   ═══════════════════════════════════════════════════════ */
+
+@theme {
+  /* Colors */
+  --color-primary: var(--prism-color-primary);
+  --color-primary-foreground: var(--prism-color-primary-foreground);
+  --color-secondary: var(--prism-color-secondary);
+  --color-secondary-foreground: var(--prism-color-secondary-foreground);
+  --color-background: var(--prism-color-background);
+  --color-foreground: var(--prism-color-foreground);
+  --color-surface: var(--prism-color-surface);
+  --color-surface-foreground: var(--prism-color-surface-foreground);
+  --color-muted: var(--prism-color-muted);
+  --color-muted-foreground: var(--prism-color-muted-foreground);
+  --color-border: var(--prism-color-border);
+  --color-accent: var(--prism-color-accent);
+  --color-accent-foreground: var(--prism-color-accent-foreground);
+  --color-ring: var(--prism-color-ring);
+  --color-destructive: var(--prism-color-destructive);
+  --color-destructive-foreground: var(--prism-color-destructive-foreground);
+  --color-success: var(--prism-color-success);
+  --color-success-foreground: var(--prism-color-success-foreground);
+  --color-error: var(--prism-color-error);
+  --color-error-foreground: var(--prism-color-error-foreground);
+  --color-info: var(--prism-color-info);
+  --color-info-foreground: var(--prism-color-info-foreground);
+
+  /* Geometry */
+  --radius-xs: var(--prism-radius-xs);
+  --radius-sm: var(--prism-radius-sm);
+  --radius-md: var(--prism-radius-md);
+  --radius-lg: var(--prism-radius-lg);
+  --radius-xl: var(--prism-radius-xl);
+
+  /* Typography */
+  --font-sans: var(--prism-font-sans);
+  --font-mono: var(--prism-font-mono);
+
+  /* Shadows */
+  --shadow-sm: var(--prism-shadow-sm);
+  --shadow-md: var(--prism-shadow-md);
+  --shadow-lg: var(--prism-shadow-lg);
+}
+
+/* ═══════════════════════════════════════════════════════
+   GLOBAL RESETS
+   ═══════════════════════════════════════════════════════ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button, [role="button"] {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

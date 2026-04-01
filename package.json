@@ -11,13 +11,19 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./src/*": "./src/*"
+    "./src/*": "./src/*",
+    "./styles": {
+      "style": "./src/styles/theme.css",
+      "default": "./src/styles/theme.css"
+    }
   },
   "files": [
     "dist",
     "src"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch"
