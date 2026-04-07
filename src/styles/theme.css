@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════════════════
-   PRISM THEME ENGINE
+   PRISM THEME ENGINE (OKLCH)
    Canonical --prism-* variable definitions with 3 vibes.
+   All colors use OKLCH for perceptual uniformity.
    Import this file to get the full token system:
      @import "@prism/ui/styles";
    ═══════════════════════════════════════════════════════ */
@@ -8,29 +9,33 @@
 @layer prism {
   /* ── Modern (default) ─────────────────────────────── */
   :root {
-    /* Colors — Semantic palette */
-    --prism-color-primary: #6366f1;
-    --prism-color-primary-foreground: #ffffff;
-    --prism-color-secondary: #f1f5f9;
-    --prism-color-secondary-foreground: #0f172a;
-    --prism-color-background: #ffffff;
-    --prism-color-foreground: #0f172a;
-    --prism-color-surface: #f8fafc;
-    --prism-color-surface-foreground: #0f172a;
-    --prism-color-muted: #f1f5f9;
-    --prism-color-muted-foreground: #64748b;
-    --prism-color-border: #e2e8f0;
-    --prism-color-accent: #f1f5f9;
-    --prism-color-accent-foreground: #0f172a;
-    --prism-color-ring: #6366f1;
-    --prism-color-destructive: #ef4444;
-    --prism-color-destructive-foreground: #ffffff;
-    --prism-color-success: #22c55e;
-    --prism-color-success-foreground: #ffffff;
-    --prism-color-error: #ef4444;
-    --prism-color-error-foreground: #ffffff;
-    --prism-color-info: #3b82f6;
-    --prism-color-info-foreground: #ffffff;
+    /* Colors — Semantic palette (OKLCH) */
+    --prism-color-primary: oklch(0.585 0.2041 277.12);
+    --prism-color-primary-foreground: oklch(1 0 0);
+    --prism-color-secondary: oklch(0.968 0.0069 247.9);
+    --prism-color-secondary-foreground: oklch(0.208 0.0398 265.75);
+    --prism-color-background: oklch(1 0 0);
+    --prism-color-foreground: oklch(0.208 0.0398 265.75);
+    --prism-color-surface: oklch(0.984 0.0034 247.86);
+    --prism-color-surface-foreground: oklch(0.208 0.0398 265.75);
+    --prism-color-muted: oklch(0.968 0.0069 247.9);
+    --prism-color-muted-foreground: oklch(0.554 0.0407 257.42);
+    --prism-color-border: oklch(0.929 0.0126 255.51);
+    --prism-color-accent: oklch(0.968 0.0069 247.9);
+    --prism-color-accent-foreground: oklch(0.208 0.0398 265.75);
+    --prism-color-ring: oklch(0.585 0.2041 277.12);
+    --prism-color-destructive: oklch(0.637 0.2078 25.33);
+    --prism-color-destructive-foreground: oklch(1 0 0);
+    --prism-color-success: oklch(0.723 0.192 149.58);
+    --prism-color-success-foreground: oklch(1 0 0);
+    --prism-color-warning: oklch(0.769 0.165 70.08);
+    --prism-color-warning-foreground: oklch(0.208 0.0398 265.75);
+    --prism-color-error: oklch(0.637 0.2078 25.33);
+    --prism-color-error-foreground: oklch(1 0 0);
+    --prism-color-info: oklch(0.623 0.188 259.81);
+    --prism-color-info-foreground: oklch(1 0 0);
+    --prism-color-tertiary: oklch(0.555 0.1748 285.38);
+    --prism-color-tertiary-foreground: oklch(1 0 0);
 
     /* Geometry */
     --prism-radius-xs: 0.125rem;
@@ -38,6 +43,15 @@
     --prism-radius-md: 0.5rem;
     --prism-radius-lg: 0.75rem;
     --prism-radius-xl: 1rem;
+    --prism-radius-full: 9999px;
+
+    /* Spacing */
+    --prism-spacing-xs: 0.25rem;
+    --prism-spacing-sm: 0.5rem;
+    --prism-spacing-md: 0.75rem;
+    --prism-spacing-lg: 1rem;
+    --prism-spacing-xl: 1.5rem;
+    --prism-spacing-2xl: 2rem;
     --prism-border-thin: 1px;
     --prism-border-default: 1px;
     --prism-border-thick: 2px;
@@ -55,9 +69,9 @@
     --prism-tracking-wide: 0.025em;
 
     /* Effects */
-    --prism-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --prism-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --prism-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --prism-shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.05);
+    --prism-shadow-md: 0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1);
+    --prism-shadow-lg: 0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1);
     --prism-blur-sm: 4px;
     --prism-blur-md: 8px;
     --prism-blur-lg: 12px;
@@ -65,28 +79,30 @@
 
   /* ── Retro ────────────────────────────────────────── */
   .prism-vibe-retro {
-    --prism-color-primary: #1a1a2e;
-    --prism-color-primary-foreground: #f0e68c;
-    --prism-color-secondary: #f5f0e1;
-    --prism-color-secondary-foreground: #1a1a2e;
-    --prism-color-background: #faf8f0;
-    --prism-color-foreground: #1a1a2e;
-    --prism-color-surface: #f5f0e1;
-    --prism-color-surface-foreground: #1a1a2e;
-    --prism-color-muted: #f5f0e1;
-    --prism-color-muted-foreground: #6b5c4d;
-    --prism-color-border: #1a1a2e;
-    --prism-color-accent: #d4a574;
-    --prism-color-accent-foreground: #1a1a2e;
-    --prism-color-ring: #1a1a2e;
-    --prism-color-destructive: #cc3333;
-    --prism-color-destructive-foreground: #ffffff;
-    --prism-color-success: #2d8a4e;
-    --prism-color-success-foreground: #ffffff;
-    --prism-color-error: #cc3333;
-    --prism-color-error-foreground: #ffffff;
-    --prism-color-info: #2563eb;
-    --prism-color-info-foreground: #ffffff;
+    --prism-color-primary: oklch(0.228 0.0384 282.93);
+    --prism-color-primary-foreground: oklch(0.913 0.1119 102.83);
+    --prism-color-secondary: oklch(0.955 0.0206 91.58);
+    --prism-color-secondary-foreground: oklch(0.228 0.0384 282.93);
+    --prism-color-background: oklch(0.978 0.0108 95.16);
+    --prism-color-foreground: oklch(0.228 0.0384 282.93);
+    --prism-color-surface: oklch(0.955 0.0206 91.58);
+    --prism-color-surface-foreground: oklch(0.228 0.0384 282.93);
+    --prism-color-muted: oklch(0.955 0.0206 91.58);
+    --prism-color-muted-foreground: oklch(0.485 0.0303 67.01);
+    --prism-color-border: oklch(0.228 0.0384 282.93);
+    --prism-color-accent: oklch(0.754 0.0853 67.1);
+    --prism-color-accent-foreground: oklch(0.228 0.0384 282.93);
+    --prism-color-ring: oklch(0.228 0.0384 282.93);
+    --prism-color-destructive: oklch(0.559 0.19 25.86);
+    --prism-color-destructive-foreground: oklch(1 0 0);
+    --prism-color-success: oklch(0.564 0.1266 151.58);
+    --prism-color-success-foreground: oklch(1 0 0);
+    --prism-color-warning: oklch(0.769 0.165 70.08);
+    --prism-color-warning-foreground: oklch(0.228 0.0384 282.93);
+    --prism-color-error: oklch(0.559 0.19 25.86);
+    --prism-color-error-foreground: oklch(1 0 0);
+    --prism-color-info: oklch(0.546 0.2152 262.88);
+    --prism-color-info-foreground: oklch(1 0 0);
 
     --prism-radius-xs: 0;
     --prism-radius-sm: 0;
@@ -98,9 +114,9 @@
 
     --prism-font-sans: "Courier New", ui-monospace, Consolas, monospace;
 
-    --prism-shadow-sm: 2px 2px 0 #1a1a2e;
-    --prism-shadow-md: 3px 3px 0 #1a1a2e;
-    --prism-shadow-lg: 5px 5px 0 #1a1a2e;
+    --prism-shadow-sm: 2px 2px 0 oklch(0.228 0.0384 282.93);
+    --prism-shadow-md: 3px 3px 0 oklch(0.228 0.0384 282.93);
+    --prism-shadow-lg: 5px 5px 0 oklch(0.228 0.0384 282.93);
     --prism-blur-sm: 0px;
     --prism-blur-md: 0px;
     --prism-blur-lg: 0px;
@@ -108,28 +124,30 @@
 
   /* ── Glassy ───────────────────────────────────────── */
   .prism-vibe-glassy {
-    --prism-color-primary: #818cf8;
-    --prism-color-primary-foreground: #ffffff;
-    --prism-color-secondary: rgba(255, 255, 255, 0.08);
-    --prism-color-secondary-foreground: #e2e8f0;
-    --prism-color-background: rgba(15, 15, 35, 0.75);
-    --prism-color-foreground: #f1f5f9;
-    --prism-color-surface: rgba(255, 255, 255, 0.06);
-    --prism-color-surface-foreground: #f1f5f9;
-    --prism-color-muted: rgba(255, 255, 255, 0.06);
-    --prism-color-muted-foreground: #94a3b8;
-    --prism-color-border: rgba(255, 255, 255, 0.15);
-    --prism-color-accent: rgba(255, 255, 255, 0.08);
-    --prism-color-accent-foreground: #f1f5f9;
-    --prism-color-ring: #818cf8;
-    --prism-color-destructive: #f87171;
-    --prism-color-destructive-foreground: #ffffff;
-    --prism-color-success: #4ade80;
-    --prism-color-success-foreground: #0f172a;
-    --prism-color-error: #f87171;
-    --prism-color-error-foreground: #ffffff;
-    --prism-color-info: #60a5fa;
-    --prism-color-info-foreground: #0f172a;
+    --prism-color-primary: oklch(0.68 0.1583 276.93);
+    --prism-color-primary-foreground: oklch(1 0 0);
+    --prism-color-secondary: oklch(1 0 0 / 0.08);
+    --prism-color-secondary-foreground: oklch(0.929 0.0126 255.51);
+    --prism-color-background: oklch(0.181 0.0404 281.57 / 0.75);
+    --prism-color-foreground: oklch(0.968 0.0069 247.9);
+    --prism-color-surface: oklch(1 0 0 / 0.06);
+    --prism-color-surface-foreground: oklch(0.968 0.0069 247.9);
+    --prism-color-muted: oklch(1 0 0 / 0.06);
+    --prism-color-muted-foreground: oklch(0.711 0.0351 256.79);
+    --prism-color-border: oklch(1 0 0 / 0.15);
+    --prism-color-accent: oklch(1 0 0 / 0.08);
+    --prism-color-accent-foreground: oklch(0.968 0.0069 247.9);
+    --prism-color-ring: oklch(0.68 0.1583 276.93);
+    --prism-color-destructive: oklch(0.711 0.1661 22.22);
+    --prism-color-destructive-foreground: oklch(1 0 0);
+    --prism-color-success: oklch(0.8 0.1821 151.71);
+    --prism-color-success-foreground: oklch(0.208 0.0398 265.75);
+    --prism-color-warning: oklch(0.82 0.16 80);
+    --prism-color-warning-foreground: oklch(0.208 0.0398 265.75);
+    --prism-color-error: oklch(0.711 0.1661 22.22);
+    --prism-color-error-foreground: oklch(1 0 0);
+    --prism-color-info: oklch(0.714 0.1434 254.62);
+    --prism-color-info-foreground: oklch(0.208 0.0398 265.75);
 
     --prism-radius-xs: 0.25rem;
     --prism-radius-sm: 0.5rem;
@@ -137,9 +155,9 @@
     --prism-radius-lg: 1rem;
     --prism-radius-xl: 1.5rem;
 
-    --prism-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
-    --prism-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.25);
-    --prism-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.35);
+    --prism-shadow-sm: 0 2px 8px oklch(0 0 0 / 0.15);
+    --prism-shadow-md: 0 8px 32px oklch(0 0 0 / 0.25);
+    --prism-shadow-lg: 0 16px 48px oklch(0 0 0 / 0.35);
     --prism-blur-sm: 8px;
     --prism-blur-md: 12px;
     --prism-blur-lg: 20px;
@@ -150,9 +168,11 @@
    TAILWIND 4 THEME ALIASES
    Maps --prism-* → TW utility tokens so components using
    bg-primary, text-foreground, etc. resolve correctly.
+   Uses @theme inline per shadcn convention — variables are
+   available to Tailwind utilities without double-defining.
    ═══════════════════════════════════════════════════════ */
 
-@theme {
+@theme inline {
   /* Colors */
   --color-primary: var(--prism-color-primary);
   --color-primary-foreground: var(--prism-color-primary-foreground);
@@ -172,10 +192,14 @@
   --color-destructive-foreground: var(--prism-color-destructive-foreground);
   --color-success: var(--prism-color-success);
   --color-success-foreground: var(--prism-color-success-foreground);
+  --color-warning: var(--prism-color-warning);
+  --color-warning-foreground: var(--prism-color-warning-foreground);
   --color-error: var(--prism-color-error);
   --color-error-foreground: var(--prism-color-error-foreground);
   --color-info: var(--prism-color-info);
   --color-info-foreground: var(--prism-color-info-foreground);
+  --color-tertiary: var(--prism-color-tertiary);
+  --color-tertiary-foreground: var(--prism-color-tertiary-foreground);
 
   /* Geometry */
   --radius-xs: var(--prism-radius-xs);
@@ -183,6 +207,15 @@
   --radius-md: var(--prism-radius-md);
   --radius-lg: var(--prism-radius-lg);
   --radius-xl: var(--prism-radius-xl);
+  --radius-full: var(--prism-radius-full);
+
+  /* Spacing */
+  --spacing-xs: var(--prism-spacing-xs);
+  --spacing-sm: var(--prism-spacing-sm);
+  --spacing-md: var(--prism-spacing-md);
+  --spacing-lg: var(--prism-spacing-lg);
+  --spacing-xl: var(--prism-spacing-xl);
+  --spacing-2xl: var(--prism-spacing-2xl);
 
   /* Typography */
   --font-sans: var(--prism-font-sans);
