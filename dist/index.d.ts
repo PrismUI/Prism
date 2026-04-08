@@ -1,8 +1,28 @@
 import * as react from 'react';
-import { ButtonHTMLAttributes, HTMLAttributes } from 'react';
+import { HTMLAttributes, ButtonHTMLAttributes } from 'react';
 import * as class_variance_authority_types from 'class-variance-authority/types';
 import { VariantProps } from 'class-variance-authority';
 import { ClassValue } from 'clsx';
+
+declare const avatarVariants: (props?: ({
+    variant?: "filled" | "outlined" | "initials" | "image" | null | undefined;
+    size?: "sm" | "md" | "lg" | null | undefined;
+} & class_variance_authority_types.ClassProp) | undefined) => string;
+interface AvatarProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof avatarVariants> {
+    /** Display initials (overrides icon). 1-2 characters recommended. */
+    initials?: string;
+    /** Image URL. When set, displays as background image. */
+    src?: string;
+    /** Alt text for the image */
+    alt?: string;
+    /** Status indicator */
+    status?: "online" | "offline" | "away" | "busy" | "";
+    /** Theme token overrides */
+    tokenBg?: string;
+    tokenText?: string;
+    tokenBorder?: string;
+}
+declare const Avatar: react.ForwardRefExoticComponent<AvatarProps & react.RefAttributes<HTMLDivElement>>;
 
 declare const buttonVariants: (props?: ({
     variant?: "primary" | "secondary" | "tertiary" | "outline" | "ghost" | "destructive" | null | undefined;
@@ -57,4 +77,4 @@ declare const Nav: react.ForwardRefExoticComponent<NavProps & react.RefAttribute
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { Button, Card, CardContent, CardDescription, CardHeader, CardPreview, CardTitle, Nav, buttonVariants, cn };
+export { Avatar, Button, Card, CardContent, CardDescription, CardHeader, CardPreview, CardTitle, Nav, avatarVariants, buttonVariants, cn };

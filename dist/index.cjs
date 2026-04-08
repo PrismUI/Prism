@@ -1,12 +1,12 @@
 'use strict';
 
 var react = require('react');
-var reactSlot = require('@radix-ui/react-slot');
-var RadixIcons = require('@radix-ui/react-icons');
 var classVarianceAuthority = require('class-variance-authority');
 var clsx = require('clsx');
 var tailwindMerge = require('tailwind-merge');
 var jsxRuntime = require('react/jsx-runtime');
+var reactSlot = require('@radix-ui/react-slot');
+var RadixIcons = require('@radix-ui/react-icons');
 var Dialog = require('@radix-ui/react-dialog');
 
 function _interopNamespace(e) {
@@ -30,11 +30,123 @@ function _interopNamespace(e) {
 var RadixIcons__namespace = /*#__PURE__*/_interopNamespace(RadixIcons);
 var Dialog__namespace = /*#__PURE__*/_interopNamespace(Dialog);
 
-// src/components/button.tsx
+// src/components/avatar.tsx
 function cn(...inputs) {
   return tailwindMerge.twMerge(clsx.clsx(inputs));
 }
-var iconSizeMap = { sm: "w-3.5 h-3.5", md: "w-[15px] h-[15px]", lg: "w-4 h-4" };
+var avatarVariants = classVarianceAuthority.cva(
+  "relative inline-flex items-center justify-center rounded-full font-semibold select-none shrink-0",
+  {
+    variants: {
+      variant: {
+        filled: "bg-primary text-primary-foreground",
+        outlined: "bg-muted text-muted-foreground border border-border",
+        initials: "bg-primary text-primary-foreground",
+        image: "bg-surface text-muted-foreground"
+      },
+      size: {
+        sm: "w-8 h-8 text-[11px]",
+        md: "w-11 h-11 text-sm",
+        lg: "w-14 h-14 text-lg"
+      }
+    },
+    defaultVariants: {
+      variant: "filled",
+      size: "md"
+    }
+  }
+);
+var iconSizeMap = { sm: 15, md: 18, lg: 20 };
+var statusDotSizeMap = { sm: 10, md: 12, lg: 14 };
+function tokenToColor(token) {
+  if (!token) return void 0;
+  return `var(--color-${token})`;
+}
+var statusColorMap = {
+  online: "bg-success",
+  offline: "bg-muted-foreground",
+  away: "bg-warning",
+  busy: "bg-destructive"
+};
+var Avatar = react.forwardRef(
+  ({
+    variant,
+    size = "md",
+    initials,
+    src,
+    alt,
+    status,
+    tokenBg,
+    tokenText,
+    tokenBorder,
+    className,
+    style,
+    ...props
+  }, ref) => {
+    const iconSize = iconSizeMap[size ?? "md"];
+    const dotSize = statusDotSizeMap[size ?? "md"];
+    const tokenStyle = { ...style };
+    const bg = tokenToColor(tokenBg);
+    if (bg) tokenStyle.backgroundColor = bg;
+    const color = tokenToColor(tokenText);
+    if (color) tokenStyle.color = color;
+    const borderColor = tokenToColor(tokenBorder);
+    if (borderColor) tokenStyle.borderColor = borderColor;
+    if (src) {
+      tokenStyle.backgroundImage = `url(${src})`;
+      tokenStyle.backgroundSize = "cover";
+      tokenStyle.backgroundPosition = "center";
+    }
+    const effectiveVariant = src ? "image" : initials ? "initials" : variant;
+    return /* @__PURE__ */ jsxRuntime.jsxs(
+      "div",
+      {
+        ref,
+        className: cn(avatarVariants({ variant: effectiveVariant, size }), className),
+        style: Object.keys(tokenStyle).length > 0 ? tokenStyle : style,
+        role: "img",
+        "aria-label": alt ?? initials ?? "Avatar",
+        ...props,
+        children: [
+          !src && initials ? /* @__PURE__ */ jsxRuntime.jsx("span", { children: initials }) : !src ? /* @__PURE__ */ jsxRuntime.jsxs(
+            "svg",
+            {
+              width: iconSize,
+              height: iconSize,
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2",
+              strokeLinecap: "round",
+              strokeLinejoin: "round",
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" }),
+                /* @__PURE__ */ jsxRuntime.jsx("circle", { cx: "12", cy: "7", r: "4" })
+              ]
+            }
+          ) : null,
+          status && status !== "" && /* @__PURE__ */ jsxRuntime.jsx(
+            "span",
+            {
+              className: cn(
+                "absolute rounded-full border-2 border-background",
+                statusColorMap[status]
+              ),
+              style: {
+                width: dotSize,
+                height: dotSize,
+                bottom: size === "sm" ? -1 : 0,
+                right: size === "sm" ? -1 : 0
+              }
+            }
+          )
+        ]
+      }
+    );
+  }
+);
+Avatar.displayName = "Avatar";
+var iconSizeMap2 = { sm: "w-3.5 h-3.5", md: "w-[15px] h-[15px]", lg: "w-4 h-4" };
 function resolveIcon(name) {
   if (!name) return null;
   const key = `${name}Icon`;
@@ -80,7 +192,7 @@ function tokenToRadius(token) {
   if (token === "full") return "9999px";
   return `var(--radius-${token})`;
 }
-function tokenToColor(token) {
+function tokenToColor2(token) {
   if (!token) return void 0;
   return `var(--color-${token})`;
 }
@@ -118,16 +230,16 @@ var Button = react.forwardRef(
     ...props
   }, ref) => {
     const Comp = asChild ? reactSlot.Slot : "button";
-    const iconCls = iconSizeMap[size ?? "md"];
+    const iconCls = iconSizeMap2[size ?? "md"];
     const LeftComp = resolveIcon(leftIcon);
     const RightComp = resolveIcon(rightIcon);
     const IconOnlyComp = resolveIcon(leftIcon) ?? RadixIcons__namespace.PlusIcon;
     const tokenStyle = { ...style };
     const r = tokenToRadius(tokenRadius);
     if (r) tokenStyle.borderRadius = r;
-    const bg = tokenToColor(tokenBg);
+    const bg = tokenToColor2(tokenBg);
     if (bg) tokenStyle.backgroundColor = bg;
-    const color = tokenToColor(tokenText);
+    const color = tokenToColor2(tokenText);
     if (color) tokenStyle.color = color;
     const px = tokenToSpacing(tokenPx);
     if (px) {
@@ -346,6 +458,7 @@ var Nav = react.forwardRef(
 );
 Nav.displayName = "Nav";
 
+exports.Avatar = Avatar;
 exports.Button = Button;
 exports.Card = Card;
 exports.CardContent = CardContent;
@@ -354,6 +467,7 @@ exports.CardHeader = CardHeader;
 exports.CardPreview = CardPreview;
 exports.CardTitle = CardTitle;
 exports.Nav = Nav;
+exports.avatarVariants = avatarVariants;
 exports.buttonVariants = buttonVariants;
 exports.cn = cn;
 //# sourceMappingURL=index.cjs.map
