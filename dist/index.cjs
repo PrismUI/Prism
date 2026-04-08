@@ -126,7 +126,7 @@ var Avatar = react.forwardRef(
               ]
             }
           ) : null,
-          status && /* @__PURE__ */ jsxRuntime.jsx(
+          status && status !== "none" && /* @__PURE__ */ jsxRuntime.jsx(
             "span",
             {
               className: cn(

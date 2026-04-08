@@ -128,7 +128,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
         ) : null}
 
         {/* Status indicator dot */}
-        {status && (
+        {status && status !== "none" && (
           <span
             className={cn(
               "absolute rounded-full border-2 border-background",
