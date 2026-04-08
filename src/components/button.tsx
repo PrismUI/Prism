@@ -20,7 +20,7 @@ const buttonVariants = cva(
         primary:
           "bg-primary text-primary-foreground hover:bg-primary/90",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground hover:bg-secondary-hover",
         tertiary:
           "bg-tertiary text-tertiary-foreground hover:bg-tertiary/90",
         outline:

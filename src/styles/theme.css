@@ -14,6 +14,7 @@
     --prism-color-primary-foreground: oklch(1 0 0);
     --prism-color-secondary: oklch(0.968 0.0069 247.9);
     --prism-color-secondary-foreground: oklch(0.208 0.0398 265.75);
+    --prism-color-secondary-hover: oklch(0.945 0.0069 247.9);
     --prism-color-background: oklch(1 0 0);
     --prism-color-foreground: oklch(0.208 0.0398 265.75);
     --prism-color-surface: oklch(0.984 0.0034 247.86);
@@ -83,6 +84,7 @@
     --prism-color-primary-foreground: oklch(0.913 0.1119 102.83);
     --prism-color-secondary: oklch(0.955 0.0206 91.58);
     --prism-color-secondary-foreground: oklch(0.228 0.0384 282.93);
+    --prism-color-secondary-hover: oklch(0.925 0.0206 91.58);
     --prism-color-background: oklch(0.978 0.0108 95.16);
     --prism-color-foreground: oklch(0.228 0.0384 282.93);
     --prism-color-surface: oklch(0.955 0.0206 91.58);
@@ -128,6 +130,7 @@
     --prism-color-primary-foreground: oklch(1 0 0);
     --prism-color-secondary: oklch(1 0 0 / 0.08);
     --prism-color-secondary-foreground: oklch(0.929 0.0126 255.51);
+    --prism-color-secondary-hover: oklch(1 0 0 / 0.12);
     --prism-color-background: oklch(0.181 0.0404 281.57 / 0.75);
     --prism-color-foreground: oklch(0.968 0.0069 247.9);
     --prism-color-surface: oklch(1 0 0 / 0.06);
@@ -178,6 +181,7 @@
   --color-primary-foreground: var(--prism-color-primary-foreground);
   --color-secondary: var(--prism-color-secondary);
   --color-secondary-foreground: var(--prism-color-secondary-foreground);
+  --color-secondary-hover: var(--prism-color-secondary-hover);
   --color-background: var(--prism-color-background);
   --color-foreground: var(--prism-color-foreground);
   --color-surface: var(--prism-color-surface);
