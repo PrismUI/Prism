@@ -41,6 +41,7 @@ function tokenToColor(token) {
   return `var(--color-${token})`;
 }
 var statusColorMap = {
+  none: "bg-border",
   online: "bg-success",
   offline: "bg-muted-foreground",
   away: "bg-warning",
@@ -103,7 +104,7 @@ var Avatar = forwardRef(
               ]
             }
           ) : null,
-          status && status !== "none" && /* @__PURE__ */ jsx(
+          status && /* @__PURE__ */ jsx(
             "span",
             {
               className: cn(

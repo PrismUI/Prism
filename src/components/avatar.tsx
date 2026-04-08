@@ -52,6 +52,7 @@ interface AvatarProps
 }
 
 const statusColorMap: Record<string, string> = {
+  none: "bg-border",
   online: "bg-success",
   offline: "bg-muted-foreground",
   away: "bg-warning",
@@ -127,7 +128,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
         ) : null}
 
         {/* Status indicator dot */}
-        {status && status !== "none" && (
+        {status && (
           <span
             className={cn(
               "absolute rounded-full border-2 border-background",
