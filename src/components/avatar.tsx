@@ -96,8 +96,8 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
       tokenStyle.backgroundPosition = "center";
     }
 
-    // Determine effective variant based on props
-    const effectiveVariant = src ? "image" : initials ? "initials" : variant;
+    // Use the passed variant directly; only auto-detect if variant is not set
+    const effectiveVariant = variant ?? (src ? "image" : initials ? "initials" : "filled");
 
     return (
       <div
@@ -108,10 +108,10 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
         aria-label={alt ?? initials ?? "Avatar"}
         {...props}
       >
-        {/* Content: initials, icon placeholder, or nothing (image bg) */}
-        {!src && initials ? (
+        {/* Content: initials (only for initials variant), icon placeholder, or nothing (image bg) */}
+        {effectiveVariant === "initials" && initials ? (
           <span>{initials}</span>
-        ) : !src ? (
+        ) : effectiveVariant !== "image" && !src ? (
           <svg
             width={iconSize}
             height={iconSize}

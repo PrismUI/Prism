@@ -98,7 +98,7 @@ var Avatar = react.forwardRef(
       tokenStyle.backgroundSize = "cover";
       tokenStyle.backgroundPosition = "center";
     }
-    const effectiveVariant = src ? "image" : initials ? "initials" : variant;
+    const effectiveVariant = variant ?? (src ? "image" : initials ? "initials" : "filled");
     return /* @__PURE__ */ jsxRuntime.jsxs(
       "div",
       {
@@ -109,7 +109,7 @@ var Avatar = react.forwardRef(
         "aria-label": alt ?? initials ?? "Avatar",
         ...props,
         children: [
-          !src && initials ? /* @__PURE__ */ jsxRuntime.jsx("span", { children: initials }) : !src ? /* @__PURE__ */ jsxRuntime.jsxs(
+          effectiveVariant === "initials" && initials ? /* @__PURE__ */ jsxRuntime.jsx("span", { children: initials }) : effectiveVariant !== "image" && !src ? /* @__PURE__ */ jsxRuntime.jsxs(
             "svg",
             {
               width: iconSize,

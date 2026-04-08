@@ -76,7 +76,7 @@ var Avatar = forwardRef(
       tokenStyle.backgroundSize = "cover";
       tokenStyle.backgroundPosition = "center";
     }
-    const effectiveVariant = src ? "image" : initials ? "initials" : variant;
+    const effectiveVariant = variant ?? (src ? "image" : initials ? "initials" : "filled");
     return /* @__PURE__ */ jsxs(
       "div",
       {
@@ -87,7 +87,7 @@ var Avatar = forwardRef(
         "aria-label": alt ?? initials ?? "Avatar",
         ...props,
         children: [
-          !src && initials ? /* @__PURE__ */ jsx("span", { children: initials }) : !src ? /* @__PURE__ */ jsxs(
+          effectiveVariant === "initials" && initials ? /* @__PURE__ */ jsx("span", { children: initials }) : effectiveVariant !== "image" && !src ? /* @__PURE__ */ jsxs(
             "svg",
             {
               width: iconSize,
