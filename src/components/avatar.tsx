@@ -44,7 +44,7 @@ interface AvatarProps
   /** Alt text for the image */
   alt?: string;
   /** Status indicator */
-  status?: "online" | "offline" | "away" | "busy" | "";
+  status?: "none" | "online" | "offline" | "away" | "busy";
   /** Theme token overrides */
   tokenBg?: string;
   tokenText?: string;
@@ -127,7 +127,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
         ) : null}
 
         {/* Status indicator dot */}
-        {status && (status as string) !== "" && (
+        {status && status !== "none" && (
           <span
             className={cn(
               "absolute rounded-full border-2 border-background",

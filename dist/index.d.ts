@@ -16,7 +16,7 @@ interface AvatarProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeo
     /** Alt text for the image */
     alt?: string;
     /** Status indicator */
-    status?: "online" | "offline" | "away" | "busy" | "";
+    status?: "none" | "online" | "offline" | "away" | "busy";
     /** Theme token overrides */
     tokenBg?: string;
     tokenText?: string;

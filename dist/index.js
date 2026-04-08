@@ -103,7 +103,7 @@ var Avatar = forwardRef(
               ]
             }
           ) : null,
-          status && status !== "" && /* @__PURE__ */ jsx(
+          status && status !== "none" && /* @__PURE__ */ jsx(
             "span",
             {
               className: cn(
