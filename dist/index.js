@@ -31,9 +31,9 @@ var buttonVariants = cva(
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90"
       },
       size: {
-        sm: "gap-1 rounded-full px-3 py-1 text-xs",
-        md: "gap-2 rounded-full px-4 py-2 text-xs",
-        lg: "gap-3 rounded-full px-6 py-4 text-sm"
+        sm: "gap-1 rounded-full px-sm py-xs text-xs",
+        md: "gap-2 rounded-full px-md py-sm text-xs",
+        lg: "gap-3 rounded-full px-xl py-md text-sm"
       },
       iconOnly: {
         true: "",
@@ -41,9 +41,9 @@ var buttonVariants = cva(
       }
     },
     compoundVariants: [
-      { iconOnly: true, size: "sm", className: "p-1.5 gap-0" },
-      { iconOnly: true, size: "md", className: "p-2 gap-0" },
-      { iconOnly: true, size: "lg", className: "p-3 gap-0" }
+      { iconOnly: true, size: "sm", className: "p-xs gap-0" },
+      { iconOnly: true, size: "md", className: "p-sm gap-0" },
+      { iconOnly: true, size: "lg", className: "p-md gap-0" }
     ],
     defaultVariants: {
       variant: "primary",
