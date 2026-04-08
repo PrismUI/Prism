@@ -318,6 +318,10 @@ var Nav = forwardRef(
     initials = "JD",
     showSearch = true,
     showNotifications = true,
+    avatarVariant = "initials",
+    avatarSize = "sm",
+    avatarStatus = "none",
+    avatarSrc,
     portalContainer,
     className,
     children,
@@ -427,7 +431,16 @@ var Nav = forwardRef(
               /* @__PURE__ */ jsx("button", { className: "@lg:hidden p-1 text-muted-foreground hover:text-foreground", children: /* @__PURE__ */ jsx(MagnifyingGlassIcon, { className: "w-[18px] h-[18px]" }) })
             ] }),
             showNotifications && /* @__PURE__ */ jsx("button", { className: "p-1 text-muted-foreground hover:text-foreground", children: /* @__PURE__ */ jsx(BellIcon, { className: "w-[18px] h-[18px]" }) }),
-            /* @__PURE__ */ jsx("div", { className: "w-8 h-8 @max-sm:w-7 @max-sm:h-7 rounded-full bg-primary flex items-center justify-center", children: /* @__PURE__ */ jsx("span", { className: "text-[11px] font-semibold text-primary-foreground", children: initials }) })
+            /* @__PURE__ */ jsx(
+              Avatar,
+              {
+                variant: avatarVariant,
+                size: avatarSize,
+                initials,
+                src: avatarSrc,
+                status: avatarStatus
+              }
+            )
           ] }),
           children
         ]

@@ -70,6 +70,14 @@ interface NavProps extends HTMLAttributes<HTMLElement> {
     initials?: string;
     showSearch?: boolean;
     showNotifications?: boolean;
+    /** Avatar variant */
+    avatarVariant?: "filled" | "outlined" | "initials" | "image";
+    /** Avatar size */
+    avatarSize?: "sm" | "md";
+    /** Avatar status indicator */
+    avatarStatus?: "none" | "online" | "offline" | "away" | "busy";
+    /** Avatar image URL */
+    avatarSrc?: string;
     /** Container element for the mobile menu portal (scopes overlay to a parent) */
     portalContainer?: HTMLElement | null;
 }

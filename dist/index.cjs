@@ -340,6 +340,10 @@ var Nav = react.forwardRef(
     initials = "JD",
     showSearch = true,
     showNotifications = true,
+    avatarVariant = "initials",
+    avatarSize = "sm",
+    avatarStatus = "none",
+    avatarSrc,
     portalContainer,
     className,
     children,
@@ -449,7 +453,16 @@ var Nav = react.forwardRef(
               /* @__PURE__ */ jsxRuntime.jsx("button", { className: "@lg:hidden p-1 text-muted-foreground hover:text-foreground", children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.MagnifyingGlassIcon, { className: "w-[18px] h-[18px]" }) })
             ] }),
             showNotifications && /* @__PURE__ */ jsxRuntime.jsx("button", { className: "p-1 text-muted-foreground hover:text-foreground", children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.BellIcon, { className: "w-[18px] h-[18px]" }) }),
-            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-8 h-8 @max-sm:w-7 @max-sm:h-7 rounded-full bg-primary flex items-center justify-center", children: /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-[11px] font-semibold text-primary-foreground", children: initials }) })
+            /* @__PURE__ */ jsxRuntime.jsx(
+              Avatar,
+              {
+                variant: avatarVariant,
+                size: avatarSize,
+                initials,
+                src: avatarSrc,
+                status: avatarStatus
+              }
+            )
           ] }),
           children
         ]

@@ -1,5 +1,6 @@
 import { forwardRef, useState, type HTMLAttributes } from "react";
 import { cn } from "../lib/utils";
+import { Avatar } from "./avatar";
 import * as Dialog from "@radix-ui/react-dialog";
 import {
   HamburgerMenuIcon,
@@ -21,6 +22,14 @@ interface NavProps extends HTMLAttributes<HTMLElement> {
   initials?: string;
   showSearch?: boolean;
   showNotifications?: boolean;
+  /** Avatar variant */
+  avatarVariant?: "filled" | "outlined" | "initials" | "image";
+  /** Avatar size */
+  avatarSize?: "sm" | "md";
+  /** Avatar status indicator */
+  avatarStatus?: "none" | "online" | "offline" | "away" | "busy";
+  /** Avatar image URL */
+  avatarSrc?: string;
   /** Container element for the mobile menu portal (scopes overlay to a parent) */
   portalContainer?: HTMLElement | null;
 }
@@ -38,6 +47,10 @@ const Nav = forwardRef<HTMLElement, NavProps>(
       initials = "JD",
       showSearch = true,
       showNotifications = true,
+      avatarVariant = "initials",
+      avatarSize = "sm",
+      avatarStatus = "none",
+      avatarSrc,
       portalContainer,
       className,
       children,
@@ -191,11 +204,13 @@ const Nav = forwardRef<HTMLElement, NavProps>(
           )}
 
           {/* Avatar */}
-          <div className="w-8 h-8 @max-sm:w-7 @max-sm:h-7 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-[11px] font-semibold text-primary-foreground">
-              {initials}
-            </span>
-          </div>
+          <Avatar
+            variant={avatarVariant}
+            size={avatarSize}
+            initials={initials}
+            src={avatarSrc}
+            status={avatarStatus}
+          />
         </div>
 
         {children}
