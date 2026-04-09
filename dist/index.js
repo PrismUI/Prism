@@ -334,7 +334,7 @@ var Nav = forwardRef(
       {
         ref,
         className: cn(
-          "@container flex items-center justify-between w-full bg-background border-b border-border",
+          "@container flex items-center justify-between w-full py-md bg-background border-b border-border",
           className
         ),
         ...props,
@@ -375,7 +375,7 @@ var Nav = forwardRef(
                         setMobileOpen(false);
                       },
                       className: cn(
-                        "flex items-center gap-sm px-md py-sm rounded-xl text-[13px] transition-colors",
+                        "flex items-center gap-sm px-md py-xs rounded-xl text-[13px] transition-colors",
                         i === activeIndex ? "bg-secondary text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                       ),
                       children: link.label
@@ -398,7 +398,7 @@ var Nav = forwardRef(
                   setActiveIndex(i);
                 },
                 className: cn(
-                  "px-md py-sm rounded-xl text-[13px] transition-colors",
+                  "px-md py-xs rounded-xl text-[13px] transition-colors",
                   i === activeIndex ? "bg-secondary text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                 ),
                 children: link.label
@@ -414,7 +414,7 @@ var Nav = forwardRef(
                   setActiveIndex(i);
                 },
                 className: cn(
-                  "px-md py-sm rounded-xl text-[13px] transition-colors",
+                  "px-md py-xs rounded-xl text-[13px] transition-colors",
                   i === activeIndex ? "bg-secondary text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                 ),
                 children: link.label
@@ -424,7 +424,7 @@ var Nav = forwardRef(
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-md", children: [
             showSearch && /* @__PURE__ */ jsxs(Fragment, { children: [
-              /* @__PURE__ */ jsxs("button", { className: "hidden @lg:flex items-center gap-sm px-md py-sm rounded-full bg-secondary border border-border text-[12px] text-muted-foreground", children: [
+              /* @__PURE__ */ jsxs("button", { className: "hidden @lg:flex items-center gap-sm px-md py-xs rounded-full bg-secondary border border-border text-[12px] text-muted-foreground", children: [
                 /* @__PURE__ */ jsx(MagnifyingGlassIcon, { className: "w-3.5 h-3.5" }),
                 /* @__PURE__ */ jsx("span", { children: "Search..." })
               ] }),

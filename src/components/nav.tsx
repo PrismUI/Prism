@@ -65,7 +65,7 @@ const Nav = forwardRef<HTMLElement, NavProps>(
       <nav
         ref={ref}
         className={cn(
-          "@container flex items-center justify-between w-full bg-background border-b border-border",
+          "@container flex items-center justify-between w-full py-md bg-background border-b border-border",
           className
         )}
         {...props}
@@ -113,7 +113,7 @@ const Nav = forwardRef<HTMLElement, NavProps>(
                         setMobileOpen(false);
                       }}
                       className={cn(
-                        "flex items-center gap-sm px-md py-sm rounded-xl text-[13px] transition-colors",
+                        "flex items-center gap-sm px-md py-xs rounded-xl text-[13px] transition-colors",
                         i === activeIndex
                           ? "bg-secondary text-foreground font-medium"
                           : "text-muted-foreground hover:text-foreground"
@@ -148,7 +148,7 @@ const Nav = forwardRef<HTMLElement, NavProps>(
                   setActiveIndex(i);
                 }}
                 className={cn(
-                  "px-md py-sm rounded-xl text-[13px] transition-colors",
+                  "px-md py-xs rounded-xl text-[13px] transition-colors",
                   i === activeIndex
                     ? "bg-secondary text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground"
@@ -170,7 +170,7 @@ const Nav = forwardRef<HTMLElement, NavProps>(
                   setActiveIndex(i);
                 }}
                 className={cn(
-                  "px-md py-sm rounded-xl text-[13px] transition-colors",
+                  "px-md py-xs rounded-xl text-[13px] transition-colors",
                   i === activeIndex
                     ? "bg-secondary text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground"
@@ -187,7 +187,7 @@ const Nav = forwardRef<HTMLElement, NavProps>(
           {/* Search — pill on desktop, icon on mobile/tablet */}
           {showSearch && (
             <>
-              <button className="hidden @lg:flex items-center gap-sm px-md py-sm rounded-full bg-secondary border border-border text-[12px] text-muted-foreground">
+              <button className="hidden @lg:flex items-center gap-sm px-md py-xs rounded-full bg-secondary border border-border text-[12px] text-muted-foreground">
                 <MagnifyingGlassIcon className="w-3.5 h-3.5" />
                 <span>Search...</span>
               </button>
