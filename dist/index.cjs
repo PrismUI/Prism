@@ -361,12 +361,12 @@ var Nav = react.forwardRef(
         ),
         ...props,
         children: [
-          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-4 @md:gap-6", children: [
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-md @md:gap-lg", children: [
             /* @__PURE__ */ jsxRuntime.jsxs(Dialog__namespace.Root, { open: mobileOpen, onOpenChange: setMobileOpen, children: [
               /* @__PURE__ */ jsxRuntime.jsx(Dialog__namespace.Trigger, { asChild: true, children: /* @__PURE__ */ jsxRuntime.jsx(
                 "button",
                 {
-                  className: "@lg:hidden p-1 rounded-md text-foreground",
+                  className: "@lg:hidden p-xs rounded-md text-foreground",
                   "aria-label": "Open menu",
                   children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.HamburgerMenuIcon, { className: "w-5 h-5" })
                 }
@@ -374,8 +374,8 @@ var Nav = react.forwardRef(
               /* @__PURE__ */ jsxRuntime.jsxs(Dialog__namespace.Portal, { container: portalContainer ?? void 0, children: [
                 /* @__PURE__ */ jsxRuntime.jsx(Dialog__namespace.Overlay, { className: "absolute inset-0 z-40 bg-black/30 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" }),
                 /* @__PURE__ */ jsxRuntime.jsxs(Dialog__namespace.Content, { className: "absolute inset-y-0 left-0 z-50 w-64 bg-background border-r border-border flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left", children: [
-                  /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between p-4 border-b border-border", children: [
-                    /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center justify-between p-lg border-b border-border", children: [
+                    /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-sm", children: [
                       /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-7 h-7 rounded-md bg-primary flex items-center justify-center", children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.PlusIcon, { className: "w-4 h-4 text-primary-foreground" }) }),
                       /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-[15px] font-bold text-foreground", children: brand })
                     ] }),
@@ -388,7 +388,7 @@ var Nav = react.forwardRef(
                       }
                     ) })
                   ] }),
-                  /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-col gap-0.5 p-3", children: links.map((link, i) => /* @__PURE__ */ jsxRuntime.jsx(
+                  /* @__PURE__ */ jsxRuntime.jsx("div", { className: "flex flex-col gap-xs p-md", children: links.map((link, i) => /* @__PURE__ */ jsxRuntime.jsx(
                     "a",
                     {
                       href: link.href,
@@ -397,7 +397,7 @@ var Nav = react.forwardRef(
                         setMobileOpen(false);
                       },
                       className: cn(
-                        "flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] transition-colors",
+                        "flex items-center gap-sm px-md py-sm rounded-xl text-[13px] transition-colors",
                         i === activeIndex ? "bg-secondary text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                       ),
                       children: link.label
@@ -407,11 +407,11 @@ var Nav = react.forwardRef(
                 ] })
               ] })
             ] }),
-            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-sm", children: [
               /* @__PURE__ */ jsxRuntime.jsx("div", { className: "w-7 h-7 rounded-md bg-primary flex items-center justify-center", children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.PlusIcon, { className: "w-4 h-4 text-primary-foreground" }) }),
               /* @__PURE__ */ jsxRuntime.jsx("span", { className: "text-[15px] font-bold text-foreground", children: brand })
             ] }),
-            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "hidden @lg:flex items-center gap-1", children: links.map((link, i) => /* @__PURE__ */ jsxRuntime.jsx(
+            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "hidden @lg:flex items-center gap-xs", children: links.map((link, i) => /* @__PURE__ */ jsxRuntime.jsx(
               "a",
               {
                 href: link.href,
@@ -420,14 +420,14 @@ var Nav = react.forwardRef(
                   setActiveIndex(i);
                 },
                 className: cn(
-                  "px-3 py-1.5 rounded-xl text-[13px] transition-colors",
+                  "px-md py-xs rounded-xl text-[13px] transition-colors",
                   i === activeIndex ? "bg-secondary text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                 ),
                 children: link.label
               },
               i
             )) }),
-            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "hidden @sm:flex @lg:hidden items-center gap-1", children: links.slice(0, 3).map((link, i) => /* @__PURE__ */ jsxRuntime.jsx(
+            /* @__PURE__ */ jsxRuntime.jsx("div", { className: "hidden @sm:flex @lg:hidden items-center gap-xs", children: links.slice(0, 3).map((link, i) => /* @__PURE__ */ jsxRuntime.jsx(
               "a",
               {
                 href: link.href,
@@ -436,7 +436,7 @@ var Nav = react.forwardRef(
                   setActiveIndex(i);
                 },
                 className: cn(
-                  "px-3 py-1.5 rounded-xl text-[13px] transition-colors",
+                  "px-md py-xs rounded-xl text-[13px] transition-colors",
                   i === activeIndex ? "bg-secondary text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                 ),
                 children: link.label
@@ -444,15 +444,15 @@ var Nav = react.forwardRef(
               i
             )) })
           ] }),
-          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-md", children: [
             showSearch && /* @__PURE__ */ jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntime.jsxs("button", { className: "hidden @lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border text-[12px] text-muted-foreground", children: [
+              /* @__PURE__ */ jsxRuntime.jsxs("button", { className: "hidden @lg:flex items-center gap-sm px-md py-xs rounded-full bg-secondary border border-border text-[12px] text-muted-foreground", children: [
                 /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.MagnifyingGlassIcon, { className: "w-3.5 h-3.5" }),
                 /* @__PURE__ */ jsxRuntime.jsx("span", { children: "Search..." })
               ] }),
-              /* @__PURE__ */ jsxRuntime.jsx("button", { className: "@lg:hidden p-1 text-muted-foreground hover:text-foreground", children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.MagnifyingGlassIcon, { className: "w-[18px] h-[18px]" }) })
+              /* @__PURE__ */ jsxRuntime.jsx("button", { className: "@lg:hidden p-xs text-muted-foreground hover:text-foreground", children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.MagnifyingGlassIcon, { className: "w-[18px] h-[18px]" }) })
             ] }),
-            showNotifications && /* @__PURE__ */ jsxRuntime.jsx("button", { className: "p-1 text-muted-foreground hover:text-foreground", children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.BellIcon, { className: "w-[18px] h-[18px]" }) }),
+            showNotifications && /* @__PURE__ */ jsxRuntime.jsx("button", { className: "p-xs text-muted-foreground hover:text-foreground", children: /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.BellIcon, { className: "w-[18px] h-[18px]" }) }),
             /* @__PURE__ */ jsxRuntime.jsx(
               Avatar,
               {
