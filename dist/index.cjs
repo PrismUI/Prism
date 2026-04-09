@@ -420,7 +420,7 @@ var Nav = react.forwardRef(
                   setActiveIndex(i);
                 },
                 className: cn(
-                  "px-md py-xs rounded-xl text-[13px] transition-colors",
+                  "px-md py-sm rounded-xl text-[13px] transition-colors",
                   i === activeIndex ? "bg-secondary text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                 ),
                 children: link.label
@@ -436,7 +436,7 @@ var Nav = react.forwardRef(
                   setActiveIndex(i);
                 },
                 className: cn(
-                  "px-md py-xs rounded-xl text-[13px] transition-colors",
+                  "px-md py-sm rounded-xl text-[13px] transition-colors",
                   i === activeIndex ? "bg-secondary text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                 ),
                 children: link.label
@@ -446,7 +446,7 @@ var Nav = react.forwardRef(
           ] }),
           /* @__PURE__ */ jsxRuntime.jsxs("div", { className: "flex items-center gap-md", children: [
             showSearch && /* @__PURE__ */ jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntime.jsxs("button", { className: "hidden @lg:flex items-center gap-sm px-md py-xs rounded-full bg-secondary border border-border text-[12px] text-muted-foreground", children: [
+              /* @__PURE__ */ jsxRuntime.jsxs("button", { className: "hidden @lg:flex items-center gap-sm px-md py-sm rounded-full bg-secondary border border-border text-[12px] text-muted-foreground", children: [
                 /* @__PURE__ */ jsxRuntime.jsx(RadixIcons.MagnifyingGlassIcon, { className: "w-3.5 h-3.5" }),
                 /* @__PURE__ */ jsxRuntime.jsx("span", { children: "Search..." })
               ] }),
